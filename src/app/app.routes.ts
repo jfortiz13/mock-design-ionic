@@ -22,6 +22,16 @@ export const routes: Routes = [
       import('./pages/resgitro/resgitro.component').then((m) => m.ResgitroComponent),
   },
   {
+    path: 'captura-fotos-usuario',
+    loadComponent: () =>
+      import('./pages/captura-fotos-usuario/captura-fotos-usuario.component').then((m) => m.CapturaFotosUsuarioComponent),
+  },
+  {
+    path: 'captura-datos-movil',
+    loadComponent: () =>
+      import('./pages/captura-datos-movil/captura-datos-movil.component').then((m) => m.CapturaDatosMovilComponent),
+  },
+  {
     path: 'restablecer-contrasenia',
     loadComponent: () =>
       import('./pages/restablecer-contrasenia/restablecer-contrasenia.component').then((m) => m.RestablecerContraseniaComponent),

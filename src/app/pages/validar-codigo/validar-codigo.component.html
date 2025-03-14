@@ -3,18 +3,18 @@
 <ion-content color="light">
   <ion-list [inset]="true">
     <ion-item>
-      <ion-input label="ID técnico:"></ion-input>
+      <ion-input label="Clave del técnico*:" labelPlacement="floating"  class="color-label-floating"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-input label="Código:"></ion-input>
+      <ion-input label="Código*:" labelPlacement="floating"  class="color-label-floating"></ion-input>
     </ion-item>
   </ion-list>
   <ion-list [inset]="true">
     <ion-item>
-      <ion-button class="i-text-capitalize" color="secondary" expand="block" fill="outline"  [routerLink]="['/login']">
+      <ion-button class="no-capital-letters" color="secondary" expand="block" fill="outline"  [routerLink]="['/login']">
         Cancelar
       </ion-button>
-      <ion-button class="i-text-capitalize" expand="block" fill="outline"  [routerLink]="['/registar-usuario']">
+      <ion-button class="no-capital-letters" expand="block" fill="outline"  [routerLink]="['/registar-usuario']">
         Validar
       </ion-button>
     </ion-item>

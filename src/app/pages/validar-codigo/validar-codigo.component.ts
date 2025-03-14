@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, RouterModule } from '@angular/router';
-import { IonContent, IonGrid, IonRow, IonCol, IonInput, IonItem, IonLabel, IonText, IonButton, IonTextarea, IonList, IonRouterLink, IonSegment, IonSegmentButton, IonSegmentContent, IonSegmentView  } from '@ionic/angular/standalone';
+import { IonContent, IonInput, IonItem,  IonButton, IonList, IonRouterLink, } from '@ionic/angular/standalone';
 import { FooterComponent } from 'src/app/layout/footer/footer.component';
 import { HeaderComponent } from 'src/app/layout/header/header.component';
 
@@ -8,7 +8,7 @@ import { HeaderComponent } from 'src/app/layout/header/header.component';
   selector: 'app-validar-codigo',
   templateUrl: './validar-codigo.component.html',
   styleUrls: ['./validar-codigo.component.scss'],
-   imports: [HeaderComponent, IonContent, IonItem, IonGrid, IonRow, IonCol, IonText, IonButton, IonTextarea, IonList, IonSegmentButton, IonSegmentContent, IonSegmentView, IonLabel, IonSegment,
+   imports: [HeaderComponent, IonContent, IonItem, IonButton, IonList,
       IonRouterLink, RouterModule, IonInput, FooterComponent],
 })
 export class ValidarCodigoComponent  implements OnInit {

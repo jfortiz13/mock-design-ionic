@@ -1,0 +1,64 @@
+<app-header></app-header>
+<ion-content>
+  <ion-content color="light">
+    <ion-list [inset]="true">
+      <ion-item>
+        <ion-label class="text-bold">Datos del usuario</ion-label>
+      </ion-item>
+    </ion-list>
+
+    <ion-list [inset]="true">
+      <ion-item>
+        <ion-label>Tomar foto</ion-label>
+        <ion-button>
+          <ion-icon slot="icon-only" name="camera"></ion-icon>
+        </ion-button>
+      </ion-item>
+    </ion-list>
+
+    <ion-list [inset]="true">
+      <ion-item>
+        <div class="content-images">
+          <div style="position: relative;">
+            <img src="https://ionicframework.com/docs/img/demos/card-media.png" alt="">
+            <ion-icon (click)="remove()" class="icon-remove" name="close" color="ligth"></ion-icon>
+          </div>
+        </div>
+      </ion-item>
+    </ion-list>
+
+    <ion-list [inset]="true">
+      <ion-item>
+        <ion-label>Adjuntar foto del INE</ion-label>
+        <ion-button>
+          <ion-icon slot="icon-only" name="image"></ion-icon>
+        </ion-button>
+      </ion-item>
+    </ion-list>
+
+    <ion-list [inset]="true">
+      <ion-item>
+        <div class="content-images">
+          <div style="position: relative;">
+            <img src="https://ionicframework.com/docs/img/demos/card-media.png" alt="">
+            <ion-icon (click)="remove()" class="icon-remove" name="close" color="ligth"></ion-icon>
+          </div>
+        </div>
+      </ion-item>
+    </ion-list>
+
+    <ion-list [inset]="true">
+      <ion-item>
+        <ion-button class="no-capital-letters" color="secondary" expand="block" fill="outline"
+          [routerLink]="['/registar-usuario']">
+          Regresar
+        </ion-button>
+        <ion-button class="no-capital-letters" expand="block" fill="outline" (click)="siguiente()">
+          Siguiente
+        </ion-button>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+
+</ion-content>
+<app-footer></app-footer>

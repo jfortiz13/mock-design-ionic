@@ -1,96 +1,45 @@
 <app-header></app-header>
 
-<ion-content>
-  <ion-segment [(ngModel)]="selectedSegment" (ionChange)="onSegmentChange($event)">
-    <ion-segment-button value="1" content-id="usuario">
-      <ion-label>Datos del usuario</ion-label>
-    </ion-segment-button>
-    <ion-segment-button value="2"  content-id="movil" [disabled]="permitirMovil">
-      <ion-label>Datos del Móvil</ion-label>
-    </ion-segment-button>
-  </ion-segment>
-  <ion-segment-view>
-    <ion-segment-content id="usuario">
-      <ion-content color="light">
-        <ion-list [inset]="true">
-          <ion-item>
-            <ion-input label="Usuario*:"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-input label="Contraseña*:"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-input label="Repetir contraseña:"></ion-input>
-          </ion-item>
-        </ion-list>
+<ion-content color="light">
+  <ion-list [inset]="true">
+    <ion-item>
+      <ion-label class="text-bold">Datos del usuario</ion-label>
+    </ion-item>
+  </ion-list>
+  <ion-list [inset]="true">
+    <ion-item>
+      <ion-input label="Usuario*:" labelPlacement="floating" class="color-label-floating"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input label="Contraseña*:" labelPlacement="floating" class="color-label-floating"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input label="Confirmar contraseña*:" labelPlacement="floating" class="color-label-floating"></ion-input>
+    </ion-item>
+  </ion-list>
 
-        <ion-list [inset]="true">
-          <ion-item>
-            <ion-input label="Nombre:" disabled="true" value="Felipe Luna Linares"></ion-input>
-          </ion-item>
-          <!-- Se guardaran por separado pero para visualización se mostraran juntos -->
-          <!-- <ion-item>
-            <ion-input label="Apellido paterno:" disabled="true"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-input label="Apellido materno:" disabled="true"></ion-input>
-          </ion-item> -->
-          <ion-item>
-            <ion-input label="Email:" disabled="true" value="felipe23@email.com"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-input label="RFC:" disabled="true" value="FELI930912GRA"></ion-input>
-          </ion-item>
-        </ion-list>
+  <ion-list [inset]="true">
+    <ion-item>
+      <ion-input label="Nombre:" disabled="true" value="Felipe Luna Linares"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input label="Email:" disabled="true" value="felipe23@email.com"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input label="RFC:" disabled="true" value="FELI930912GRA"></ion-input>
+    </ion-item>
+  </ion-list>
 
-        <ion-list [inset]="true">
-          <ion-item>
-            <ion-button class="i-text-capitalize" color="secondary" expand="block" fill="outline"  [routerLink]="['/login']">
-              Cancelar
-            </ion-button>
-            <ion-button expand="block" fill="outline" (click)="siguiente()">
-              Siguiente
-            </ion-button>
-          </ion-item>
-        </ion-list>
-      </ion-content>
-    </ion-segment-content>
-    <ion-segment-content id="movil" >
-      <ion-content color="light">
-        <ion-list [inset]="true">
-          <ion-item>
-            <ion-input label="Id móvil:" disabled="true" value="41d41553536a7802"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-input label="Modelo:" disabled="true" value="SM-A546E"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-input label="Nombre:" disabled="true" value="Galaxy A54 5G"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-input label="Plataforma:" disabled="true" value="android"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-input label="Fabricante:" disabled="true" value="samsung"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-input label="Versión OS:" disabled="true" value="14"></ion-input>
-          </ion-item>
-        </ion-list>
-        <ion-list [inset]="true">
-          <ion-item>
-            <ion-button class="i-text-capitalize" color="secondary" expand="block" fill="outline"  [routerLink]="['/login']">
-              Cancelar
-            </ion-button>
-            <ion-button expand="block" fill="outline">
-              Guardar
-            </ion-button>
-          </ion-item>
-        </ion-list>
-      </ion-content>
-    </ion-segment-content>
-  </ion-segment-view>
+  <ion-list [inset]="true">
+    <ion-item>
+      <ion-button class="no-capital-letters" color="secondary" expand="block" fill="outline" [routerLink]="['/login']">
+        Cancelar
+      </ion-button>
+      <ion-button class="no-capital-letters" expand="block" fill="outline" (click)="siguiente()">
+        Siguiente
+      </ion-button>
+    </ion-item>
+  </ion-list>
 </ion-content>
-
 
 <app-footer></app-footer>

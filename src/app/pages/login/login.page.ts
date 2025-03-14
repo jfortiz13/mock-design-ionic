@@ -10,8 +10,8 @@ import { Router, RouterModule } from '@angular/router';
   selector: 'app-login',
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
-  imports: [IonContent, IonInput, IonRow, IonGrid, IonCol, IonButton, IonItem, IonLabel, IonCard, IonCardContent, IonCardSubtitle,
-    IonCardHeader, IonCardTitle,  FooterComponent, FooterComponent, HeaderComponent, NavbarComponent, IonAlert,IonModal, IonButtons, IonToolbar,IonTitle, IonHeader, IonRadio, IonRadioGroup,
+  imports: [IonContent, IonInput, IonRow, IonGrid, IonCol, IonButton, IonItem, IonCard, IonCardContent, IonCardSubtitle,
+    IonCardHeader, IonCardTitle,  FooterComponent, FooterComponent, HeaderComponent, NavbarComponent,
     RouterModule, IonRouterLink],
 })
 export class LoginPage implements OnInit {

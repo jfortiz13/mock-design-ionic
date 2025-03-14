@@ -1,0 +1,41 @@
+<app-header></app-header>
+
+<ion-content color="light">
+  <ion-list [inset]="true">
+    <ion-item>
+      <ion-label class="text-bold">Datos del móvil</ion-label>
+    </ion-item>
+  </ion-list>
+  <ion-list [inset]="true">
+    <ion-item>
+      <ion-input label="Id móvil:" disabled="true" value="41d41553536a7802"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input label="Modelo:" disabled="true" value="SM-A546E"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input label="Nombre:" disabled="true" value="Galaxy A54 5G"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input label="Plataforma:" disabled="true" value="android"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input label="Fabricante:" disabled="true" value="samsung"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input label="Versión OS:" disabled="true" value="14"></ion-input>
+    </ion-item>
+  </ion-list>
+  <ion-list [inset]="true">
+    <ion-item>
+      <ion-button class="no-capital-letters" color="secondary" expand="block" fill="outline" [routerLink]="['/captura-fotos-usuario']">
+        Regresar
+      </ion-button>
+      <ion-button class="no-capital-letters" expand="block" fill="outline">
+        Guardar
+      </ion-button>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+<app-footer></app-footer>
