@@ -1,0 +1,7 @@
+{
+  "name": "MockSenasicaApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}

@@ -1,0 +1,25 @@
+<app-header></app-header>
+
+<ion-content color="light">
+  <ion-list [inset]="true">
+    <ion-item>
+      <ion-input label="ID técnico:"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input label="Código:"></ion-input>
+    </ion-item>
+  </ion-list>
+  <ion-list [inset]="true">
+    <ion-item>
+      <ion-button class="i-text-capitalize" color="secondary" expand="block" fill="outline"  [routerLink]="['/login']">
+        Cancelar
+      </ion-button>
+      <ion-button class="i-text-capitalize" expand="block" fill="outline"  [routerLink]="['/registar-usuario']">
+        Validar
+      </ion-button>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+
+<app-footer></app-footer>
