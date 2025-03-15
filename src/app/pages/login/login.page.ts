@@ -1,5 +1,5 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { IonContent, IonInput, IonRow, IonGrid, IonCol, IonButton, IonItem, IonLabel, IonCard,IonCardContent, IonAlert, IonModal, IonButtons, IonToolbar, IonTitle,IonHeader, IonRadio, IonRadioGroup,
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { IonContent, IonInput, IonRow, IonGrid, IonCol, IonButton, IonItem, IonCard,IonCardContent, IonFooter, IonToolbar,
   IonCardHeader, IonCardTitle, IonRouterLink, IonCardSubtitle } from '@ionic/angular/standalone';
 import { FooterComponent } from "../../layout/footer/footer.component";
 import { HeaderComponent } from "../../layout/header/header.component";
@@ -11,29 +11,18 @@ import { Router, RouterModule } from '@angular/router';
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
   imports: [IonContent, IonInput, IonRow, IonGrid, IonCol, IonButton, IonItem, IonCard, IonCardContent, IonCardSubtitle,
-    IonCardHeader, IonCardTitle,  FooterComponent, FooterComponent, HeaderComponent, NavbarComponent,
+    IonCardHeader, IonCardTitle,  FooterComponent, HeaderComponent, NavbarComponent,
     RouterModule, IonRouterLink],
 })
 export class LoginPage implements OnInit {
   public folder!: string;
-  @ViewChild(IonModal) modal!: IonModal;
+  @ViewChild('contPie', { static: false }) pie!: ElementRef;
 
   constructor(private router: Router) {}
 
   ngOnInit() {
     this.folder = 'SIGAM';
-  }
 
-  onWillDismiss(event: any) {
-
-  }
-  cancel() {
-    this.modal.dismiss(null, 'cancel');
-  }
-
-  confirm() {
-    this.modal.dismiss(null, 'confirm');
-    this.router.navigate(['validar-codigo'], { queryParams: { tipoRegistro: 'ACTUALIZAR' }});
   }
 
 }

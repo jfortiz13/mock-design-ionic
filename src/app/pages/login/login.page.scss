@@ -14,3 +14,22 @@
 //   --inner-padding-start: 0px; /* Ajusta el valor según necesites */
 //   // color: beige;
 // }
+
+
+// @media (min-aspect-ratio: 8/9) {
+//   .hide-footer {
+//     display: none;
+//   }
+// }
+
+// ion-footer {
+//   position: fixed;
+//   bottom: 0;
+//   width: 100%;
+//   z-index: 9999;
+//   background: white;
+// }
+
+// .keyboard-is-open ion-footer {
+//   transform: translateY(0) !important;
+// }
