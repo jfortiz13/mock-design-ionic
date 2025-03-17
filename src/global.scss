@@ -136,3 +136,64 @@
 .text-bold {
   font-weight: bold;
 }
+
+
+.success-toast {
+  --background: #dff0d8;
+  --border-color: #d6e9c6;
+  --color: #3c763d;
+  text-align: center !important;
+}
+
+.danger-toast {
+  --background:  #f2dede;
+  --border-color: #D0021B;
+  --color: #545454;
+  text-align: center !important;
+}
+
+.info-toast {
+  --background:  #d9edf7;
+  --border-color: #bce8f1;
+  --color: #31708f;
+  text-align: center !important;
+}
+
+.warning-toast {
+  --background:#fcf8e3;
+  --border-color:#faebcc;
+  --color:#8a6d3b;
+  text-align: center !important;
+}
+
+.success-alert {
+  --background: #dff0d8 !important;
+  --ion-color-primary: #3c763d !important;
+  --ion-color-primary-contrast: #ffffff !important;
+  --ion-text-color: #3c763d !important;
+  --ion-color-step-850: #3c763d !important;
+}
+
+.danger-alert {
+  --background: #f2dede !important;
+  --ion-color-primary: #545454 !important;
+  --ion-color-primary-contrast: #ffffff !important;
+  --ion-text-color: #545454 !important;
+  --ion-color-step-850: #545454 !important;
+}
+
+.info-alert {
+  --background: #d9edf7 !important;
+  --ion-color-primary: #31708f !important;
+  --ion-color-primary-contrast: #ffffff !important;
+  --ion-text-color: #31708f !important;
+  --ion-color-step-850: #31708f !important;
+}
+
+.warning-alert {
+  --background: #fcf8e3 !important;
+  --ion-color-primary: #8a6d3b !important;
+  --ion-color-primary-contrast: #ffffff !important;
+  --ion-text-color: #8a6d3b !important;
+  --ion-color-step-850: #8a6d3b !important;
+}

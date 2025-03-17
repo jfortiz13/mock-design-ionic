@@ -45,5 +45,13 @@ export const routes: Routes = [
     path: 'card',
     loadComponent: () =>
       import('./pages/card/card.component').then((m) => m.CardComponent),
+  },  {
+    path: 'alert',
+    loadComponent: () => import('./pages/alert/alert.page').then( m => m.AlertPage)
   },
+  {
+    path: 'toast',
+    loadComponent: () => import('./pages/toast/toast.page').then( m => m.ToastPage)
+  },
+
 ];
