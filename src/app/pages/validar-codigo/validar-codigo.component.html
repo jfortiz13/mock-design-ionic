@@ -3,12 +3,22 @@
 <ion-content color="light">
   <ion-list [inset]="true">
     <ion-item>
-      <ion-input label="Clave del técnico*:" labelPlacement="floating"  class="color-label-floating"></ion-input>
+      <ion-input label="Clave del Técnico*:" labelPlacement="floating"  class="color-label-floating"></ion-input>
     </ion-item>
     <ion-item>
       <ion-input label="Código*:" labelPlacement="floating"  class="color-label-floating"></ion-input>
     </ion-item>
   </ion-list>
+
+  <ion-list [inset]="true">
+    <ion-item>
+      <ion-label>Terminos y condiciones</ion-label>
+      <div class="ion-text-end">
+        <ion-toggle [disabled]="terminosAceptados" [checked]="terminosAceptados" (click)="abrirTerminos()" id="open-modal"></ion-toggle>
+      </div>
+    </ion-item>
+  </ion-list>
+
   <ion-list [inset]="true">
     <ion-item>
       <ion-button class="no-capital-letters" color="secondary" expand="block" fill="outline"  [routerLink]="['/login']">
@@ -19,6 +29,45 @@
       </ion-button>
     </ion-item>
   </ion-list>
+
+  <!-- modal de terminos y condiciones -->
+    <ion-modal trigger="open-modal">
+      <ng-template>
+        <ion-header>
+          <ion-toolbar>
+            <ion-buttons mode="ios" slot="start">
+              <ion-button mode="ios" (click)="cancelar()">Cancelar</ion-button>
+            </ion-buttons>
+            <ion-title mode="ios">
+              <div class="ion-text-wrap">
+                Términos y condiciones
+              </div>
+            </ion-title>
+            <ion-buttons mode="ios" slot="end">
+              <ion-button mode="ios" (click)="aceptar()" [strong]="true">Aceptar</ion-button>
+            </ion-buttons>
+          </ion-toolbar>
+        </ion-header>
+        <ion-content class="ion-padding">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni illum quidem recusandae ducimus quos
+            reprehenderit. Veniam, molestias quos, dolorum consequuntur nisi deserunt omnis id illo sit cum qui. Eaque,
+            dicta.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni illum quidem recusandae ducimus quos
+            reprehenderit. Veniam, molestias quos, dolorum consequuntur nisi deserunt omnis id illo sit cum qui. Eaque,
+            dicta.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni illum quidem recusandae ducimus quos
+            reprehenderit. Veniam, molestias quos, dolorum consequuntur nisi deserunt omnis id illo sit cum qui. Eaque,
+            dicta.
+          </p>
+        </ion-content>
+      </ng-template>
+    </ion-modal>
+
 </ion-content>
 
 
