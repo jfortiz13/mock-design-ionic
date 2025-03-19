@@ -5,7 +5,7 @@ import { ToastController } from '@ionic/angular';
   providedIn: 'root'
 })
 export class ToastService {
-private readonly TOAST_DURATION = 5000;
+private readonly TOAST_DURATION = 500000;
 private readonly SUCCESS_TOAST_CSS_CLASS = 'success-toast';
 private readonly DANGER_TOAST_CSS_CLASS = 'danger-toast';
 private readonly INFO_TOAST_CSS_CLASS = 'info-toast';
