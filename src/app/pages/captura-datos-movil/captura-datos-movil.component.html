@@ -28,10 +28,10 @@
   </ion-list>
   <ion-list [inset]="true">
     <ion-item>
-      <ion-button class="no-capital-letters" color="secondary" expand="block" fill="outline" [routerLink]="['/captura-fotos-usuario']">
+      <ion-button class="no-capital-letters" size="default" color="secondary" expand="block" fill="outline" [routerLink]="['/captura-fotos-usuario']">
         Regresar
       </ion-button>
-      <ion-button class="no-capital-letters" expand="block" fill="outline">
+      <ion-button class="no-capital-letters" size="default" expand="block" fill="outline" (click)="guardar()">
         Guardar
       </ion-button>
     </ion-item>

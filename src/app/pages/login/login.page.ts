@@ -1,10 +1,10 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IonContent, IonInput, IonRow, IonGrid, IonCol, IonButton, IonItem, IonCard,IonCardContent, IonText, IonToolbar, IonButtons, IonHeader, IonModal, IonTitle,
+import { IonContent, IonInput, IonRow, IonGrid, IonCol, IonButton, IonItem, IonCard,IonCardContent, IonText, IonModal,
   IonCardHeader, IonCardTitle, IonRouterLink, IonCardSubtitle, IonToggle, } from '@ionic/angular/standalone';
 import { FooterComponent } from "../../layout/footer/footer.component";
 import { HeaderComponent } from "../../layout/header/header.component";
 import { NavbarComponent } from "../../layout/navbar/navbar.component";
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 
 
 @Component({
@@ -12,32 +12,25 @@ import { RouterModule } from '@angular/router';
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
   imports: [IonContent, IonInput, IonRow, IonGrid, IonCol, IonButton, IonItem, IonCard, IonCardContent, IonCardSubtitle, IonText, IonToggle,
-    IonCardHeader, IonCardTitle,  FooterComponent, HeaderComponent, NavbarComponent, IonHeader, IonModal, IonTitle, IonButtons, IonToolbar,
+    IonCardHeader, IonCardTitle,  FooterComponent, HeaderComponent, NavbarComponent,
     RouterModule, IonRouterLink],
 })
 export class LoginPage implements OnInit {
   public folder!: string;
-  public terminosAceptados = false;
   @ViewChild(IonModal) modal!: IonModal;
-
-  constructor() {}
+  public sesionCorrecta: boolean = false;
+  constructor(private router: Router) {}
 
   ngOnInit() {
     this.folder = 'SIGAM';
-
   }
 
-  abrirTerminos() {
-    this.terminosAceptados = true;
-  }
 
-  cancelar() {
-    this.modal.dismiss(null, 'Cancelar');
+  iniciarSesion() {
+    if (this.sesionCorrecta)
+      this.router.navigate(['/terminos-condiciones']);
+    else
+    this.router.navigate(['validar-codigo'], { queryParams: { sesionCorrecta: this.sesionCorrecta } });
   }
-
-  aceptar() {
-    this.modal.dismiss(null, 'Aceptar');
-  }
-
 
 }

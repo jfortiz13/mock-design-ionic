@@ -63,7 +63,8 @@
 
   --ion-color-header: #BC955C;
 	--ion-color-header-rgb: 188,149,92;
-	--ion-color-header-contrast: #000000;
+	--ion-color-header-contrast:#ffffff;
+  // --ion-color-header-contrast: #000000;
 	--ion-color-header-contrast-rgb: 0,0,0;
 	--ion-color-header-shade: #a58351;
 	--ion-color-header-tint: #c3a06c;
@@ -194,3 +195,5 @@
   --ion-color-step-850: var(--ion-warning-letters);
   --ion-color-primary-contrast: var(--ion-color-contrast);
 }
+
+

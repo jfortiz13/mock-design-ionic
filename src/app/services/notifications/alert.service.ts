@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { AlertController } from '@ionic/angular';
+import { AlertButton, AlertController } from '@ionic/angular';
 
 @Injectable({
   providedIn: 'root'
@@ -13,33 +13,34 @@ export class AlertService {
   private readonly DANGER_ALERT_HEADER = 'Error';
   private readonly INFO_ALERT_HEADER = 'Información';
   private readonly WARNING_ALERT_HEADER = 'Advertencia';
+  private readonly BUTTON_ACEPTAR = 'Aceptar';
 
 constructor(private alertController: AlertController) { }
 
 
-  success(message: string) {
-    this.createAlert(message, this.SUCCESS_ALERT_CSS_CLASS, this.SUCCESS_ALERT_HEADER);
+  success(message: string, header: string = this.SUCCESS_ALERT_HEADER, buttons: Array<string> | Array<AlertButton> = [this.BUTTON_ACEPTAR]) {
+    this.createAlert(message, this.SUCCESS_ALERT_CSS_CLASS, header, buttons);
   }
 
-  error(message: string) {
-    this.createAlert(message, this.DANGER_ALERT_CSS_CLASS, this.DANGER_ALERT_HEADER);
+  error(message: string, header: string = this.DANGER_ALERT_HEADER, buttons: Array<string> | Array<AlertButton> = [this.BUTTON_ACEPTAR]) {
+    this.createAlert(message, this.DANGER_ALERT_CSS_CLASS, header, buttons);
   }
 
-  info(message: string) {
-    this.createAlert(message, this.INFO_ALERT_CSS_CLASS, this.INFO_ALERT_HEADER);
+  info(message: string, header: string = this.INFO_ALERT_HEADER, buttons: Array<string> | Array<AlertButton> = [this.BUTTON_ACEPTAR]) {
+    this.createAlert(message, this.INFO_ALERT_CSS_CLASS, header, buttons);
   }
 
-  warning(message: string) {
-    this.createAlert(message, this.WARNING_ALERT_CSS_CLASS, this.WARNING_ALERT_HEADER);
+  warning(message: string, header: string = this.WARNING_ALERT_HEADER, buttons: Array<string> | Array<AlertButton> = [this.BUTTON_ACEPTAR]) {
+    this.createAlert(message, this.WARNING_ALERT_CSS_CLASS, header, buttons);
   }
 
-  private async createAlert(message: string, cssClass: string, header: string) {
+  private async createAlert(message: string, cssClass: string, header: string, buttons: Array<string> | Array<AlertButton>) {
 
     const alert = await this.alertController.create({
       header,
       message,
       cssClass,
-      buttons: ['Aceptar']
+      buttons: buttons
     });
 
     await alert.present();

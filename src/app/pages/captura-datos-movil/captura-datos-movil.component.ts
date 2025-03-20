@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 import { IonContent, IonInput, IonItem, IonLabel, IonButton, IonList, IonRouterLink,  } from '@ionic/angular/standalone';
 import { FooterComponent } from 'src/app/layout/footer/footer.component';
 import { HeaderComponent } from 'src/app/layout/header/header.component';
+import { AlertService } from 'src/app/services/notifications/alert.service';
 
 @Component({
   selector: 'app-captura-datos-movil',
@@ -15,8 +16,12 @@ import { HeaderComponent } from 'src/app/layout/header/header.component';
 })
 export class CapturaDatosMovilComponent  implements OnInit {
 
-  constructor() { }
+  constructor( private alert: AlertService) { }
 
   ngOnInit() {}
+
+  guardar() {
+    this.alert.success('Registro exitoso.', '');
+  }
 
 }

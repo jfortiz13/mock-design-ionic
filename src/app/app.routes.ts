@@ -12,6 +12,16 @@ export const routes: Routes = [
       import('./pages/login/login.page').then((m) => m.LoginPage),
   },
   {
+    path: 'terminos-condiciones',
+    loadComponent: () =>
+      import('./pages/terminos-condiciones/terminos-condiciones.component').then((m) => m.TerminosCondicionesComponent),
+  },
+  {
+    path: 'bienvenidos',
+    loadComponent: () =>
+      import('./pages/principal/principal.component').then((m) => m.PrincipalComponent),
+  },
+  {
     path: 'validar-codigo',
     loadComponent: () =>
       import('./pages/validar-codigo/validar-codigo.component').then((m) => m.ValidarCodigoComponent),
@@ -45,7 +55,8 @@ export const routes: Routes = [
     path: 'card',
     loadComponent: () =>
       import('./pages/card/card.component').then((m) => m.CardComponent),
-  },  {
+  },
+  {
     path: 'alert',
     loadComponent: () => import('./pages/alert/alert.page').then( m => m.AlertPage)
   },
