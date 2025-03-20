@@ -3,6 +3,7 @@ import { RouterModule } from '@angular/router';
 import { IonContent, IonGrid, IonRow, IonCol, IonInput, IonItem, IonText, IonButton, IonRouterLink,  } from '@ionic/angular/standalone';
 import { FooterComponent } from 'src/app/layout/footer/footer.component';
 import { HeaderComponent } from 'src/app/layout/header/header.component';
+import { AlertService } from 'src/app/services/notifications/alert.service';
 @Component({
   selector: 'app-actualizar-contrasenia',
   templateUrl: './actualizar-contrasenia.component.html',
@@ -12,8 +13,12 @@ import { HeaderComponent } from 'src/app/layout/header/header.component';
 })
 export class ActualizarContraseniaComponent  implements OnInit {
 
-  constructor() { }
+  constructor( private alert: AlertService) { }
 
   ngOnInit() {}
+
+  actualizar() {
+    this.alert.success('Actualización exitosa.', '');
+  }
 
 }
