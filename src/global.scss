@@ -69,6 +69,13 @@
 	--ion-color-header-shade: #a58351;
 	--ion-color-header-tint: #c3a06c;
 
+  --ion-color-success: #3c763d;
+	--ion-color-success-rgb: 60,118,61;
+	--ion-color-success-contrast: #ffffff;
+	--ion-color-success-contrast-rgb: 255,255,255;
+	--ion-color-success-shade: #356836;
+	--ion-color-success-tint: #508450;
+
   //como grafica base no lo tiene tomamos el por defecto que es negro #000000
   --ion-color-dark: #000000;
 	--ion-color-dark-rgb: 0,0,0;
@@ -195,5 +202,6 @@
   --ion-color-step-850: var(--ion-warning-letters);
   --ion-color-primary-contrast: var(--ion-color-contrast);
 }
+
 
 

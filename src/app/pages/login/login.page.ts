@@ -18,7 +18,7 @@ import { Router, RouterModule } from '@angular/router';
 export class LoginPage implements OnInit {
   public folder!: string;
   @ViewChild(IonModal) modal!: IonModal;
-  public sesionCorrecta: boolean = false;
+  public sesionCorrecta: boolean = true;
   constructor(private router: Router) {}
 
   ngOnInit() {

@@ -1,105 +1,3 @@
-
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
-// *{
-//   margin: 0;
-//   padding: 0;
-//   box-sizing: border-box;
-//   font-family: "Poppins", sans-serif;
-// }
-
-// .wrapper .outer{
-//   display: flex;
-//   // align-items: center;
-//   // justify-content: center;
-// }
-// .wrapper .card{
-//   background: #fff;
-//   width: 430px;
-//   display: flex;
-//   align-items: center;
-//   padding: 20px;
-//   // opacity: 0;
-//   pointer-events: none;
-//   position: absolute;
-//   justify-content: space-between;
-//   border-radius: 100px 20px 20px 100px;
-//   box-shadow: 0px 10px 15px rgba(0,0,0,0.1);
-//   // animation: animate 15s linear infinite;
-//   // animation-delay: calc(3s * var(--delay));
-// }
-// // .outer:hover .card{
-// //   // animation-play-state: paused;
-// // }
-// // .wrapper .card:last-child{
-// //   // animation-delay: calc(-3s * var(--delay));
-// // }
-// // @keyframes animate {
-// //   0%{
-// //     opacity: 0;
-// //     transform: translateY(100%) scale(0.5);
-// //   }
-// //   5%, 20%{
-// //     opacity: 0.4;
-// //     transform: translateY(100%) scale(0.7);
-// //   }
-// //   25%, 40%{
-// //     opacity: 1;
-// //     pointer-events: auto;
-// //     transform: translateY(0%) scale(1);
-// //   }
-// //   45%, 60%{
-// //     opacity: 0.4;
-// //     transform: translateY(-100%) scale(0.7);
-// //   }
-// //   65%, 100%{
-// //     opacity: 0;
-// //     transform: translateY(-100%) scale(0.5);
-// //   }
-// // }
-// .card .content{
-//   display: flex;
-//   align-items: center;
-// }
-// .wrapper .card .img{
-//   height: 90px;
-//   width: 90px;
-//   position: absolute;
-//   left: -5px;
-//   background: #fff;
-//   border-radius: 50%;
-//   padding: 5px;
-//   box-shadow: 0px 0px 5px rgba(0,0,0,0.2);
-// }
-// .card .img img{
-//   height: 100%;
-//   width: 100%;
-//   border-radius: 50%;
-//   object-fit: cover;
-// }
-// .card .details{
-//   margin-left: 80px;
-// }
-// .details span{
-//   font-weight: 600;
-//   font-size: 18px;
-// }
-
-// //boton follow
-// .card a{
-//   text-decoration: none;
-//   padding: 7px 18px;
-//   border-radius: 25px;
-//   color: #fff;
-//   background: linear-gradient(to bottom, #bea2e7 0%, #86b7e7 100%);
-//   // transition: all 0.3s ease;
-// }
-// // .card a:hover{
-// //   transform: scale(0.94);
-// // }
-
-//----
-
 ion-item {
   --padding-start: 0;
   --border-color: #611232;
@@ -111,13 +9,12 @@ ion-item {
 .circle-img {
   width: 55px;
   height: 55px;
-  border-radius: 50%; /* Hace que la imagen sea circular */
+  border-radius: 50%;
   overflow: hidden;
-  // padding: 100px;
 }
 
 .rounded-card {
-  border-top-right-radius: 50px !important; /* Redondea solo la parte derecha */
+  border-top-right-radius: 50px !important;
   border-bottom-right-radius: 50px !important;
   // background-color: #86b7e7;
 }
@@ -128,17 +25,57 @@ ion-thumbnail{
   -webkit-margin-end: 0px;
 }
 
-.card-content-ios,
-.card-content-md {
+.card-content-ios, .card-content-md {
   padding-top: 0 !important;
   padding-bottom: 5px !important;
   padding-right: 1px !important;
 }
 
-// ion-card-content .ios {
-//   --padding: 100px !important; /* Ajusta el padding del card */
+// .grid-column-padding {
+//   // --ion-grid-column-padding: 0px;
+//   // --ion-grid-padding: 0px;
+//   // padding-top: 0px !important;
 // }
 
-// ion-card {
-//   padding: 8px !important; /* Ajusta el padding general */
-// }
+.big-icon {
+  font-size: 50px;
+}
+
+.ion-list-actions {
+  border-radius: 10px;
+  min-height: 40px;
+}
+
+.mt-mb-5-px {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.boder-bottom-user {
+  border-bottom: #cccccc 1px solid;
+}
+
+.ion-icon-custom-list {
+  height: 40px;
+  margin-left: 3px;
+}
+
+.ion-border-list-primary {
+  border: solid 2px var(--ion-color-primary);
+}
+
+.ion-border-list-secondary {
+  border: solid 2px var(--ion-color-secondary);
+}
+
+.ion-border-list-warning {
+  border: solid 2px var(--ion-color-header);
+}
+
+.ion-border-list-success {
+  border: solid 2px var(--ion-color-success);
+}
+
+.ion-border-list-info {
+  border: solid 2px var(--ion-color-info);
+}
+
