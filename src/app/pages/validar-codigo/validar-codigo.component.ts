@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
-import { IonContent, IonInput, IonItem,  IonButton, IonList, IonRouterLink, } from '@ionic/angular/standalone';
+import { IonContent, IonInput, IonItem,  IonButton, IonList, IonRouterLink, IonLabel, } from '@ionic/angular/standalone';
 import { FooterComponent } from 'src/app/layout/footer/footer.component';
 import { HeaderComponent } from 'src/app/layout/header/header.component';
 import { AlertService } from 'src/app/services/notifications/alert.service';
@@ -9,7 +9,7 @@ import { AlertService } from 'src/app/services/notifications/alert.service';
   selector: 'app-validar-codigo',
   templateUrl: './validar-codigo.component.html',
   styleUrls: ['./validar-codigo.component.scss'],
-   imports: [HeaderComponent, IonContent, IonItem, IonButton, IonList,
+   imports: [HeaderComponent, IonContent, IonItem, IonButton, IonList, IonLabel,
       IonRouterLink, RouterModule, IonInput, FooterComponent],
 })
 export class ValidarCodigoComponent  implements OnInit {
@@ -40,7 +40,7 @@ export class ValidarCodigoComponent  implements OnInit {
           role: 'confirm',
           handler: () => {
             console.log('Alert si');
-            this.router.navigate(['/login']);
+            this.alert.success('Registro exitoso.', '')
           },
         },
       ];
@@ -52,6 +52,10 @@ export class ValidarCodigoComponent  implements OnInit {
     } else {
       this.alert.error('Por favor verifique su Clave de Técnico y/o Código.', 'Validación incorrecta.');
     }
+  }
+
+  buscar() {
+    this.alert.error('Técnico no encontrado', '');
   }
 
 

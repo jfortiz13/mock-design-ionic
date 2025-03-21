@@ -7,6 +7,8 @@ import { HeaderComponent } from "../../layout/header/header.component";
 import { NavbarComponent } from "../../layout/navbar/navbar.component";
 import { Router, RouterModule } from '@angular/router';
 import { AlertService } from 'src/app/services/notifications/alert.service';
+import { DEFAULT_INTERRUPTSOURCES, Idle, KeepaliveSvc } from '@ng-idle/core';
+import { IdleService } from 'src/app/services/idle.service';
 
 
 @Component({
@@ -20,9 +22,13 @@ import { AlertService } from 'src/app/services/notifications/alert.service';
 export class LoginPage implements OnInit {
   public folder!: string;
   @ViewChild(IonModal) modal!: IonModal;
-  public sesionCorrecta: boolean = true;
+  public sesionCorrecta: boolean = false;
   public credencialesIncorrectas: boolean = false;
-  constructor(private router: Router, private alert: AlertService) {}
+  constructor(private router: Router, private alert: AlertService,
+    private idle: Idle,) {
+    // this.initIdle();
+    console.log("INICIAMOS")
+  }
 
   ngOnInit() {
     this.folder = 'SIGAM';
@@ -50,5 +56,19 @@ export class LoginPage implements OnInit {
       this.alert.info('No se puede iniciar sesión.', 'Móvil no asociado al usuario.', alertButtons);
     }
   }
+
+  // initIdle() {
+  //   this.idle.setIdle(60); // 5 minutos
+  //   this.idle.setTimeout(10); // 10 segundos para cerrar sesión
+  //   this.idle.setInterrupts(DEFAULT_INTERRUPTSOURCES);
+
+  //   this.idle.onTimeout.subscribe(() => {
+  //     console.log('Sesión cerrada por inactividad');
+  //     // Aquí puedes cerrar sesión o mostrar un modal
+  //     this.alert.info('Paso un minuto sin usar se cerrara la sesion', 'Lo sentimos');
+  //   });
+
+  //   this.idle.watch();
+  // }
 
 }
