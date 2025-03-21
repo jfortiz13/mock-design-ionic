@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { IonContent, IonInput, IonItem, IonLabel, IonButton, IonList, IonRouterLink,  } from '@ionic/angular/standalone';
 import { FooterComponent } from 'src/app/layout/footer/footer.component';
 import { HeaderComponent } from 'src/app/layout/header/header.component';
@@ -16,12 +16,20 @@ import { AlertService } from 'src/app/services/notifications/alert.service';
 })
 export class CapturaDatosMovilComponent  implements OnInit {
 
-  constructor( private alert: AlertService) { }
+  constructor( private alert: AlertService,  private router: Router,) { }
 
   ngOnInit() {}
 
   guardar() {
-    this.alert.success('Registro exitoso.', '');
+    const alertButtons = [
+      {
+        text: 'Aceptar',
+        role: 'cancel',
+        handler: () => {
+          this.router.navigate(['/login']);
+        },
+      }];
+    this.alert.success('Registro exitoso.', '', alertButtons);
   }
 
 }

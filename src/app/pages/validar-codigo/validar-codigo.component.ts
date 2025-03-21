@@ -15,6 +15,8 @@ import { AlertService } from 'src/app/services/notifications/alert.service';
 export class ValidarCodigoComponent  implements OnInit {
   public sesionCorrecta: string | null = null;
   public validado: boolean = true;
+  disabled: boolean = false;
+
   constructor(private route: ActivatedRoute, private router: Router, private alert: AlertService) { }
 
   ngOnInit() {
@@ -39,8 +41,15 @@ export class ValidarCodigoComponent  implements OnInit {
           text: 'Si',
           role: 'confirm',
           handler: () => {
-            console.log('Alert si');
-            this.alert.success('Registro exitoso.', '')
+            const alertButton = [
+              {
+                text: 'Aceptar',
+                role: 'confirm',
+                handler: () => {
+                  this.router.navigate(['/login']);
+                },
+              }];
+            this.alert.success('Actualización exitosa.', '', alertButton);
           },
         },
       ];

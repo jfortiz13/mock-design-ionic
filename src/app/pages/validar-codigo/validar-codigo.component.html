@@ -7,6 +7,9 @@
     </ion-item>
     @if (sesionCorrecta !== 'false') {
       <ion-item  style="margin-top: 10px;">
+        <ion-button class="no-capital-letters" color="secondary" size="default" expand="block" fill="outline">
+          Cancelar
+        </ion-button>
         <ion-button class="no-capital-letters" size="default" expand="block" fill="outline" (click)="buscar()">
           Buscar
         </ion-button>
@@ -14,24 +17,24 @@
     }
   </ion-list>
   @if (sesionCorrecta !== 'false') {
-    <!-- <ion-list [inset]="true">
+    <ion-list [inset]="true">
       <ion-item>
         <ion-label><strong>Técnico:</strong></ion-label>
         <p>Juan Montero Silva</p>
       </ion-item>
-    </ion-list> -->
+    </ion-list>
   }
 
 
   <ion-list [inset]="true">
     <ion-item>
-      <ion-input label="Código*:" labelPlacement="floating"  class="color-label-floating" disabled="true"></ion-input>
+      <ion-input label="Código*:" labelPlacement="floating" placeholder="Capturar código de autorización"  class="color-label-floating" [disabled]="disabled"></ion-input>
     </ion-item>
     <ion-item  style="margin-top: 10px;">
-      <ion-button class="no-capital-letters" size="default" color="secondary" expand="block" fill="outline"  [routerLink]="['/login']" disabled="true">
+      <ion-button class="no-capital-letters" size="default" color="secondary" expand="block" fill="outline"  [routerLink]="['/login']" [disabled]="disabled">
         Cancelar
       </ion-button>
-      <ion-button class="no-capital-letters" size="default" expand="block" fill="outline"  (click)="validar()" disabled="true">
+      <ion-button class="no-capital-letters" size="default" expand="block" fill="outline"  (click)="validar()" [disabled]="disabled">
         Validar
       </ion-button>
     </ion-item>

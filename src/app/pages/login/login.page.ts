@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { IonContent, IonInput, IonRow, IonGrid, IonCol, IonButton, IonItem, IonCard,IonCardContent, IonText, IonModal,
-  IonCardHeader, IonCardTitle, IonRouterLink, IonCardSubtitle, IonToggle,
+  IonCardHeader, IonCardTitle, IonRouterLink, IonCardSubtitle, IonAlert,
    } from '@ionic/angular/standalone';
 import { FooterComponent } from "../../layout/footer/footer.component";
 import { HeaderComponent } from "../../layout/header/header.component";
@@ -15,19 +15,18 @@ import { IdleService } from 'src/app/services/idle.service';
   selector: 'app-login',
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
-  imports: [IonContent, IonInput, IonRow, IonGrid, IonCol, IonButton, IonItem, IonCard, IonCardContent, IonCardSubtitle, IonText, IonToggle,
+  imports: [IonContent, IonInput, IonRow, IonGrid, IonCol, IonButton, IonItem, IonCard, IonCardContent, IonCardSubtitle, IonText, IonAlert,
     IonCardHeader, IonCardTitle,  FooterComponent, HeaderComponent, NavbarComponent,
     RouterModule, IonRouterLink],
 })
 export class LoginPage implements OnInit {
+  alertButtons = ['Action'];
   public folder!: string;
   @ViewChild(IonModal) modal!: IonModal;
   public sesionCorrecta: boolean = false;
   public credencialesIncorrectas: boolean = false;
-  constructor(private router: Router, private alert: AlertService,
-    private idle: Idle,) {
-    // this.initIdle();
-    console.log("INICIAMOS")
+  constructor(private router: Router, private alert: AlertService) {
+
   }
 
   ngOnInit() {
@@ -45,30 +44,24 @@ export class LoginPage implements OnInit {
     else {
       const alertButtons = [
         {
-          text: 'Ok',
+          text: 'No',
+          role: 'cancel',
+          handler: () => {
+            console.log('Alert cancel');
+            this.router.navigate(['login'], { queryParams: { sesionCorrecta: this.sesionCorrecta } });
+          },
+        },
+        {
+          text: 'Si',
           role: 'confirm',
           handler: () => {
-            console.log('Alert ok');
+            console.log('Alert si');
             this.router.navigate(['validar-codigo'], { queryParams: { sesionCorrecta: this.sesionCorrecta } });
           },
         },
       ];
-      this.alert.info('No se puede iniciar sesión.', 'Móvil no asociado al usuario.', alertButtons);
+      this.alert.info('¿Desea registrarlo?', 'Este móvil no esta registrado', alertButtons);
     }
   }
-
-  // initIdle() {
-  //   this.idle.setIdle(60); // 5 minutos
-  //   this.idle.setTimeout(10); // 10 segundos para cerrar sesión
-  //   this.idle.setInterrupts(DEFAULT_INTERRUPTSOURCES);
-
-  //   this.idle.onTimeout.subscribe(() => {
-  //     console.log('Sesión cerrada por inactividad');
-  //     // Aquí puedes cerrar sesión o mostrar un modal
-  //     this.alert.info('Paso un minuto sin usar se cerrara la sesion', 'Lo sentimos');
-  //   });
-
-  //   this.idle.watch();
-  // }
 
 }
