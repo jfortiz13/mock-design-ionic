@@ -203,5 +203,7 @@
   --ion-color-primary-contrast: var(--ion-color-contrast);
 }
 
-
+.toast-wrapper {
+  z-index: 99999 !important;
+}
 

@@ -16,7 +16,7 @@ import { HeaderComponent } from 'src/app/layout/header/header.component';
     IonItem,
     IonLabel,
     IonList,
-    IonThumbnail,
+    IonThumbnail
 ]
 })
 export class PrincipalComponent  implements OnInit {

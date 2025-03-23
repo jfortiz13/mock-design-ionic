@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
-import { AlertButton, AlertController } from '@ionic/angular';
-
+import { AlertButton, AlertController } from '@ionic/angular/standalone';
 @Injectable({
   providedIn: 'root'
 })
@@ -35,7 +34,6 @@ constructor(private alertController: AlertController) { }
   }
 
   private async createAlert(message: string, cssClass: string, header: string, buttons: Array<string> | Array<AlertButton>) {
-
     const alert = await this.alertController.create({
       header,
       message,

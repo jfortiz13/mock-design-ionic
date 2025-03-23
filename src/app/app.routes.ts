@@ -63,6 +63,5 @@ export const routes: Routes = [
   {
     path: 'toast',
     loadComponent: () => import('./pages/toast/toast.page').then( m => m.ToastPage)
-  },
-
+  }
 ];

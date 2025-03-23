@@ -6,6 +6,9 @@ import { routes } from './app/app.routes';
 import { AppComponent } from './app/app.component';
 import { provideNgIdleKeepalive } from '@ng-idle/keepalive';
 import { provideHttpClient } from '@angular/common/http';
+import { provideStorage, Storage } from '@ionic/storage-angular';
+
+import { PLATFORM_ID, inject } from '@angular/core';
 
 bootstrapApplication(AppComponent, {
   providers: [
@@ -14,6 +17,10 @@ bootstrapApplication(AppComponent, {
     provideRouter(routes, withPreloading(PreloadAllModules)),
     provideNgIdle(),
     provideNgIdleKeepalive(),
-    provideHttpClient()
+    provideHttpClient(),
+    {
+      provide: Storage,
+      useFactory: () => provideStorage(inject(PLATFORM_ID), { name: 'bdApp' })
+    }
   ],
 });

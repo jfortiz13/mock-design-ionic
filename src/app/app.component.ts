@@ -11,6 +11,7 @@ import { mailOutline, mailSharp, paperPlaneOutline, paperPlaneSharp, heartOutlin
 import { Subscription } from 'rxjs';
 import { AlertService } from './services/notifications/alert.service';
 import { App } from '@capacitor/app';
+import { InactividadService } from './services/Inactividad.service';
 
 @Component({
   selector: 'app-root',
@@ -39,6 +40,7 @@ export class AppComponent implements OnInit, OnDestroy{
     private alert: AlertService,
     private temporizadorSegundoPlanoService: TemporizadorSegundoPlanoService,
     private idleService: IdleService,
+    private inactividad: InactividadService
   ) {
     addIcons({ mailOutline, mailSharp, paperPlaneOutline, paperPlaneSharp, heartOutline, heartSharp, archiveOutline, archiveSharp, trashOutline, trashSharp,
                warningOutline, warningSharp, bookmarkOutline, bookmarkSharp });
