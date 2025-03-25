@@ -2,7 +2,7 @@ import { IdleService } from 'src/app/services/idle.service';
 import { TemporizadorSegundoPlanoService } from './services/temporizador-segundo-plano.service';
 
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { RouterLink, RouterLinkActive } from '@angular/router';
+import { RouterLink, RouterLinkActive, RouterModule } from '@angular/router';
 import { IonApp, IonSplitPane, IonMenu, IonContent, IonList, IonMenuToggle, IonItem, IonIcon, IonLabel, IonRouterOutlet, IonRouterLink,
   IonTitle, IonToolbar, IonHeader } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
@@ -18,8 +18,7 @@ import { InactividadService } from './services/Inactividad.service';
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.scss'],
   imports: [RouterLink, RouterLinkActive, IonApp, IonSplitPane, IonMenu, IonContent, IonList, IonMenuToggle, IonItem, IonIcon, IonLabel, IonRouterLink, IonRouterOutlet,
-    IonTitle, IonToolbar, IonHeader
-  ],
+    IonTitle, IonToolbar, IonHeader, ],
 })
 export class AppComponent implements OnInit, OnDestroy{
   public appPages = [

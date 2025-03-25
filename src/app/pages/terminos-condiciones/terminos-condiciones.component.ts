@@ -1,17 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { IonContent, IonGrid, IonRow, IonCol, IonInput, IonItem, IonText, IonButton, IonRouterLink,  } from '@ionic/angular/standalone';
-import { FooterComponent } from 'src/app/layout/footer/footer.component';
-import { HeaderComponent } from 'src/app/layout/header/header.component';
+import { IonContent, IonGrid, IonRow, IonCol, IonButton, IonRouterLink,  } from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-terminos-condiciones',
   templateUrl: './terminos-condiciones.component.html',
   styleUrls: ['./terminos-condiciones.component.scss'],
-  imports: [HeaderComponent, IonContent, IonItem, IonGrid, IonRow, IonCol, IonText, IonButton, IonRouterLink, RouterModule,
-        IonInput, FooterComponent],
+  imports: [IonContent, IonGrid, IonRow, IonCol, IonButton, IonRouterLink, RouterModule,
+      ],
 })
-export class TerminosCondicionesComponent  implements OnInit {
+export default class TerminosCondicionesComponent  implements OnInit {
 
   constructor() { }
 

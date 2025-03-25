@@ -33,3 +33,16 @@
 // .keyboard-is-open ion-footer {
 //   transform: translateY(0) !important;
 // }
+
+ion-content {
+  --padding-top: 0;  /* Elimina el padding superior predeterminado */
+}
+
+// .content {
+//   position: sticky;
+//   top: 0; /* Se pegará justo abajo del ion-header */
+//   z-index: 1; /* Asegura que quede por encima de otros elementos si es necesario */
+//   // background-color: white; /* Para asegurar que se vea bien encima del fondo */
+//   padding: 30px;
+//   width: 100%;
+// }

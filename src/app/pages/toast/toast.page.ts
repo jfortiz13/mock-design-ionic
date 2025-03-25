@@ -1,10 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonContent, IonButton, IonToast } from '@ionic/angular/standalone';
+import { IonContent, IonButton, } from '@ionic/angular/standalone';
 import { ToastService } from 'src/app/services/notifications/toast.service';
-import { FooterComponent } from 'src/app/layout/footer/footer.component';
-import { HeaderComponent } from 'src/app/layout/header/header.component';
 
 
 @Component({
@@ -12,9 +10,9 @@ import { HeaderComponent } from 'src/app/layout/header/header.component';
   templateUrl: './toast.page.html',
   styleUrls: ['./toast.page.scss'],
   standalone: true,
-  imports: [FooterComponent, HeaderComponent, IonContent, CommonModule, FormsModule, IonButton, IonToast]
+  imports: [IonContent, CommonModule, FormsModule, IonButton,]
 })
-export class ToastPage {
+export default class ToastPage {
   constructor(private toast: ToastService) { }
 
   showSuccess(message: string) {

@@ -2,28 +2,23 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { IonContent, IonInput, IonRow, IonGrid, IonCol, IonButton, IonItem, IonCard,IonCardContent, IonText, IonModal,
   IonCardHeader, IonCardTitle, IonRouterLink, IonCardSubtitle, IonAlert,
    } from '@ionic/angular/standalone';
-import { FooterComponent } from "../../layout/footer/footer.component";
-import { HeaderComponent } from "../../layout/header/header.component";
 import { NavbarComponent } from "../../layout/navbar/navbar.component";
 import { Router, RouterModule } from '@angular/router';
 import { AlertService } from 'src/app/services/notifications/alert.service';
-import { DEFAULT_INTERRUPTSOURCES, Idle, KeepaliveSvc } from '@ng-idle/core';
-import { IdleService } from 'src/app/services/idle.service';
-
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
-  imports: [IonContent, IonInput, IonRow, IonGrid, IonCol, IonButton, IonItem, IonCard, IonCardContent, IonCardSubtitle, IonText, IonAlert,
-    IonCardHeader, IonCardTitle,  FooterComponent, HeaderComponent, NavbarComponent,
+  imports: [IonInput, IonRow, IonGrid, IonCol, IonButton, IonItem, IonCard, IonCardContent, IonCardSubtitle, IonText,
+    IonCardHeader, IonCardTitle,  NavbarComponent,
     RouterModule, IonRouterLink],
 })
-export class LoginPage implements OnInit {
+export default class LoginPage implements OnInit {
   alertButtons = ['Action'];
   public folder!: string;
   @ViewChild(IonModal) modal!: IonModal;
-  public sesionCorrecta: boolean = false;
+  public sesionCorrecta: boolean = true;
   public credencialesIncorrectas: boolean = false;
   constructor(private router: Router, private alert: AlertService) {
 
@@ -56,7 +51,7 @@ export class LoginPage implements OnInit {
           role: 'confirm',
           handler: () => {
             console.log('Alert si');
-            this.router.navigate(['validar-codigo'], { queryParams: { sesionCorrecta: this.sesionCorrecta } });
+            this.router.navigate(['/validar-codigo'], { queryParams: { sesionCorrecta: this.sesionCorrecta } });
           },
         },
       ];

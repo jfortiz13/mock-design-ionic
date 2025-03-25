@@ -12,9 +12,9 @@ import { HeaderComponent } from 'src/app/layout/header/header.component';
   templateUrl: './alert.page.html',
   styleUrls: ['./alert.page.scss'],
   standalone: true,
-  imports: [IonContent, CommonModule, FormsModule, IonButton, FooterComponent, HeaderComponent]
+  imports: [IonContent, CommonModule, FormsModule, IonButton, ]
 })
-export class AlertPage implements OnInit {
+export default class AlertPage implements OnInit {
 
   constructor(private alert: AlertService) { }
 

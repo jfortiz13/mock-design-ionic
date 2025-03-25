@@ -8,10 +8,10 @@ import { AlertService } from 'src/app/services/notifications/alert.service';
   selector: 'app-actualizar-contrasenia',
   templateUrl: './actualizar-contrasenia.component.html',
   styleUrls: ['./actualizar-contrasenia.component.scss'],
-  imports: [HeaderComponent, IonContent, IonItem, IonGrid, IonRow, IonCol, IonText, IonButton, IonRouterLink, RouterModule,
-      IonInput, FooterComponent],
+  imports: [IonContent, IonItem, IonGrid, IonRow, IonCol, IonText, IonButton, IonRouterLink, RouterModule,
+      IonInput,],
 })
-export class ActualizarContraseniaComponent  implements OnInit {
+export default class ActualizarContraseniaComponent  implements OnInit {
 
   constructor( private alert: AlertService) { }
 

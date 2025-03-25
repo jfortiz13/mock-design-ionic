@@ -1,18 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { IonContent, IonInput, IonItem,  IonButton, IonList, IonRouterLink, IonLabel, } from '@ionic/angular/standalone';
-import { FooterComponent } from 'src/app/layout/footer/footer.component';
-import { HeaderComponent } from 'src/app/layout/header/header.component';
 import { AlertService } from 'src/app/services/notifications/alert.service';
 
 @Component({
   selector: 'app-validar-codigo',
   templateUrl: './validar-codigo.component.html',
   styleUrls: ['./validar-codigo.component.scss'],
-   imports: [HeaderComponent, IonContent, IonItem, IonButton, IonList, IonLabel,
-      IonRouterLink, RouterModule, IonInput, FooterComponent],
+   imports: [IonContent, IonItem, IonButton, IonList, IonLabel,
+      IonRouterLink, RouterModule, IonInput,]
 })
-export class ValidarCodigoComponent  implements OnInit {
+export default class ValidarCodigoComponent  implements OnInit {
   public sesionCorrecta: string | null = null;
   public validado: boolean = true;
   disabled: boolean = false;
